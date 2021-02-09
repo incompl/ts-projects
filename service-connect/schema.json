@@ -1,0 +1,30 @@
+{
+  "apiVersion": "2",
+  "projectId": "f4c1477e-cfe0-4f2f-aff2-6a654a4ae5b1",
+  "version": 80,
+  "created": "2021-02-09T15:48:52.495Z",
+  "updated": "2021-02-09T15:50:20.774Z",
+  "defaultLocale": "en-us",
+  "locales": [
+    "en-us"
+  ],
+  "schemaVersion": "3",
+  "queries": {},
+  "mutations": {},
+  "shapes": {},
+  "workflows": {},
+  "forms": {},
+  "services": {
+    "shopify:gregs-takeshape-store": {
+      "params": {
+        "type": "graphql",
+        "namespace": "Shopify",
+        "shop": "gregs-takeshape-store",
+        "authHeader": "X-Shopify-Access-Token",
+        "endpoint": "https://gregs-takeshape-store.myshopify.com/admin/api/2020-07/graphql.json",
+        "name": "Test"
+      }
+    }
+  },
+  "dataKey": "AQIDAHhcZWXOdlBglkxBhI23ElO/clC/kuw5ynjXDSqJgfTz8gEPJHZy1Y2Hxraw8eN7jr9rAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMAtXAodP1SGwFooIEAgEQgDtHlj79SXpLeLzRMmTnDSUEWseuiRgkhohQR1SyhZrUSslkoVE/VQWgWLSExCZGimLtGRqEdFC9tWGIRg=="
+}
