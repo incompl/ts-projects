@@ -1,0 +1,691 @@
+{
+    "apiVersion": "2",
+    "projectId": "9a51a5e4-f2d7-45fb-9a4e-0ef10f8ad15c",
+    "version": 3,
+    "created": "2021-02-08T21:55:06.749Z",
+    "updated": "2021-02-08T21:57:33.504Z",
+    "defaultLocale": "en-us",
+    "locales": [
+        "en-us"
+    ],
+    "schemaVersion": "3",
+    "queries": {
+        "getTShirt": {
+            "shape": "TShirt",
+            "resolver": {
+                "name": "takeshape:get",
+                "service": "takeshape:local",
+                "options": {
+                    "model": "TShirt"
+                }
+            },
+            "description": "Get a TShirt by ID",
+            "args": "TSGetArgs<TShirt>"
+        },
+        "getTShirtList": {
+            "shape": "PaginatedList<TShirt>",
+            "resolver": {
+                "name": "takeshape:list",
+                "service": "takeshape:local",
+                "options": {
+                    "model": "TShirt"
+                }
+            },
+            "description": "Returns a list TShirt in natural order.",
+            "args": "TSListArgs<TShirt>"
+        }
+    },
+    "mutations": {
+        "updateTShirt": {
+            "shape": "UpdateResult<TShirt>",
+            "resolver": {
+                "resultsMapping": [
+                    [
+                        "jsonPath",
+                        {
+                            "path": "$.results[0]"
+                        }
+                    ]
+                ],
+                "compose": [
+                    {
+                        "argsMapping": [
+                            [
+                                "jsonPath",
+                                {
+                                    "path": "$.args"
+                                }
+                            ]
+                        ],
+                        "name": "takeshape:update",
+                        "service": "takeshape:local",
+                        "options": {
+                            "model": "TShirt"
+                        }
+                    },
+                    {
+                        "argsMapping": {
+                            "input.descriptionHtml": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.descriptionHtml"
+                                    }
+                                ]
+                            ],
+                            "input.handle": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.handle"
+                                    }
+                                ]
+                            ],
+                            "input.redirectNewHandle": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.redirectNewHandle"
+                                    }
+                                ]
+                            ],
+                            "input.productType": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.productType"
+                                    }
+                                ]
+                            ],
+                            "input.tags": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.tags"
+                                    }
+                                ]
+                            ],
+                            "input.templateSuffix": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.templateSuffix"
+                                    }
+                                ]
+                            ],
+                            "input.giftCard": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.giftCard"
+                                    }
+                                ]
+                            ],
+                            "input.giftCardTemplateSuffix": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.giftCardTemplateSuffix"
+                                    }
+                                ]
+                            ],
+                            "input.title": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.title"
+                                    }
+                                ]
+                            ],
+                            "input.vendor": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.vendor"
+                                    }
+                                ]
+                            ],
+                            "input.bodyHtml": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.bodyHtml"
+                                    }
+                                ]
+                            ],
+                            "input.id": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.results[0].result.gregsTakeshapeStoreId"
+                                    }
+                                ]
+                            ]
+                        },
+                        "name": "graphql:mutation",
+                        "service": "shopify:gregs-takeshape-store",
+                        "options": {
+                            "fieldName": "productUpdate",
+                            "selectionSet": "{ product { id } }"
+                        }
+                    }
+                ]
+            },
+            "description": "Update TShirt",
+            "args": "UpdateArgs<TShirtInterface>"
+        },
+        "createTShirt": {
+            "shape": "CreateResult<TShirt>",
+            "resolver": {
+                "name": "takeshape:create",
+                "service": "takeshape:local",
+                "options": {
+                    "model": "TShirt"
+                }
+            },
+            "description": "Create TShirt",
+            "args": "CreateArgs<TShirt>"
+        },
+        "duplicateTShirt": {
+            "shape": "DuplicateResult<TShirt>",
+            "resolver": {
+                "name": "takeshape:duplicate",
+                "service": "takeshape:local",
+                "options": {
+                    "model": "TShirt"
+                }
+            },
+            "description": "Duplicate TShirt",
+            "args": "DuplicateArgs<TShirt>"
+        },
+        "deleteTShirt": {
+            "shape": "DeleteResult<TShirt>",
+            "resolver": {
+                "name": "takeshape:delete",
+                "service": "takeshape:local",
+                "options": {
+                    "model": "TShirt"
+                }
+            },
+            "description": "Delete TShirt",
+            "args": "DeleteArgs<TShirt>"
+        },
+        "createTShirtAndServiceObject": {
+            "shape": "CreateResult<TShirt>",
+            "resolver": {
+                "compose": [
+                    {
+                        "argsMapping": {
+                            "input.descriptionHtml": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.descriptionHtml"
+                                    }
+                                ]
+                            ],
+                            "input.handle": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.handle"
+                                    }
+                                ]
+                            ],
+                            "input.redirectNewHandle": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.redirectNewHandle"
+                                    }
+                                ]
+                            ],
+                            "input.productType": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.productType"
+                                    }
+                                ]
+                            ],
+                            "input.tags": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.tags"
+                                    }
+                                ]
+                            ],
+                            "input.templateSuffix": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.templateSuffix"
+                                    }
+                                ]
+                            ],
+                            "input.giftCard": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.giftCard"
+                                    }
+                                ]
+                            ],
+                            "input.giftCardTemplateSuffix": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.giftCardTemplateSuffix"
+                                    }
+                                ]
+                            ],
+                            "input.title": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.title"
+                                    }
+                                ]
+                            ],
+                            "input.vendor": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.vendor"
+                                    }
+                                ]
+                            ],
+                            "input.bodyHtml": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.bodyHtml"
+                                    }
+                                ]
+                            ]
+                        },
+                        "name": "graphql:mutation",
+                        "service": "shopify:gregs-takeshape-store",
+                        "options": {
+                            "fieldName": "productCreate",
+                            "selectionSet": "{ product { id } }"
+                        }
+                    },
+                    {
+                        "argsMapping": {
+                            "input": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input"
+                                    }
+                                ]
+                            ],
+                            "input.gregsTakeshapeStoreId": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.results[0].product.id"
+                                    }
+                                ]
+                            ]
+                        },
+                        "name": "takeshape:create",
+                        "service": "takeshape:local",
+                        "options": {
+                            "model": "TShirt"
+                        }
+                    }
+                ],
+                "resultsMapping": [
+                    [
+                        "jsonPath",
+                        {
+                            "path": "$.results[1]"
+                        }
+                    ]
+                ]
+            },
+            "description": "Create TShirt",
+            "args": "CreateArgs<TShirtInterface>"
+        },
+        "updateTShirtAndCreateServiceObject": {
+            "shape": "UpdateResult<TShirt>",
+            "resolver": {
+                "compose": [
+                    {
+                        "argsMapping": {
+                            "input.descriptionHtml": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.descriptionHtml"
+                                    }
+                                ]
+                            ],
+                            "input.handle": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.handle"
+                                    }
+                                ]
+                            ],
+                            "input.redirectNewHandle": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.redirectNewHandle"
+                                    }
+                                ]
+                            ],
+                            "input.productType": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.productType"
+                                    }
+                                ]
+                            ],
+                            "input.tags": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.tags"
+                                    }
+                                ]
+                            ],
+                            "input.templateSuffix": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.templateSuffix"
+                                    }
+                                ]
+                            ],
+                            "input.giftCard": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.giftCard"
+                                    }
+                                ]
+                            ],
+                            "input.giftCardTemplateSuffix": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.giftCardTemplateSuffix"
+                                    }
+                                ]
+                            ],
+                            "input.title": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.title"
+                                    }
+                                ]
+                            ],
+                            "input.vendor": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.vendor"
+                                    }
+                                ]
+                            ],
+                            "input.bodyHtml": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input.gregsTakeshapeStore.bodyHtml"
+                                    }
+                                ]
+                            ]
+                        },
+                        "name": "graphql:mutation",
+                        "service": "shopify:gregs-takeshape-store",
+                        "options": {
+                            "fieldName": "productCreate",
+                            "selectionSet": "{ product { id } }"
+                        }
+                    },
+                    {
+                        "argsMapping": {
+                            "input": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.args.input"
+                                    }
+                                ]
+                            ],
+                            "input.gregsTakeshapeStoreId": [
+                                [
+                                    "jsonPath",
+                                    {
+                                        "path": "$.results[0].product.id"
+                                    }
+                                ]
+                            ]
+                        },
+                        "name": "takeshape:update",
+                        "service": "takeshape:local",
+                        "options": {
+                            "model": "TShirt"
+                        }
+                    }
+                ],
+                "resultsMapping": [
+                    [
+                        "jsonPath",
+                        {
+                            "path": "$.results[1]"
+                        }
+                    ]
+                ]
+            },
+            "description": "Update TShirt",
+            "args": "UpdateArgs<TShirtInterface>"
+        }
+    },
+    "shapes": {
+        "TShirtInterface": {
+            "id": "TShirtInterface",
+            "name": "TShirtInterface",
+            "title": "TShirtInterface",
+            "description": "TShirtInterface",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "_version": {
+                        "type": "number"
+                    },
+                    "_status": {
+                        "type": "string"
+                    },
+                    "extraDescription": {
+                        "type": "string",
+                        "title": "Extra Description"
+                    },
+                    "gregsTakeshapeStoreId": {
+                        "title": "Service ID",
+                        "type": "string"
+                    },
+                    "gregsTakeshapeStore": {
+                        "$ref": "#/shapes/Shopify_ProductInput/schema"
+                    }
+                },
+                "required": []
+            }
+        },
+        "TShirt": {
+            "id": "FnKRDwyCk",
+            "name": "TShirt",
+            "title": "T Shirt",
+            "workflow": "default",
+            "model": {
+                "type": "multiple"
+            },
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "extraDescription": {
+                        "type": "string",
+                        "minLength": 0,
+                        "description": "",
+                        "title": "Extra Description",
+                        "@mapping": "takeshape:local:TShirt.oJli0Toud"
+                    },
+                    "gregsTakeshapeStoreId": {
+                        "type": "string",
+                        "@mapping": "takeshape:local:TShirt.jzgwP1Wjp",
+                        "title": "gregs-takeshape-store",
+                        "minLength": 1,
+                        "pattern": "(^gid://shopify/Product/\\d+$)|(^TS_CREATE$)"
+                    },
+                    "gregsTakeshapeStore": {
+                        "$ref": "#/shapes/Shopify_Product/schema",
+                        "@resolver": {
+                            "name": "graphql:query",
+                            "service": "shopify:gregs-takeshape-store",
+                            "options": {
+                                "fieldName": "product"
+                            },
+                            "argsMapping": {
+                                "id": [
+                                    [
+                                        "jsonPath",
+                                        {
+                                            "path": "$.source.gregsTakeshapeStoreId"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "workflows": {},
+    "forms": {
+        "TShirt": {
+            "default": {
+                "properties": {
+                    "extraDescription": {
+                        "widget": "singleLineText"
+                    },
+                    "gregsTakeshapeStore": {
+                        "properties": {
+                            "descriptionHtml": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "handle": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "redirectNewHandle": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "productType": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "tags": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "templateSuffix": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "giftCard": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "giftCardTemplateSuffix": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "title": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "vendor": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "bodyHtml": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "images": {
+                                "widget": "shopifyProductImages",
+                                "provider": "shopify"
+                            },
+                            "publishedAt": {
+                                "widget": "serviceObjectProperty",
+                                "provider": "shopify"
+                            },
+                            "variants": {
+                                "widget": "shopifyRelationshipSummary",
+                                "provider": "shopify"
+                            }
+                        },
+                        "widget": "shopify",
+                        "wrapper": "shopifyServiceWrapper",
+                        "order": [
+                            "title",
+                            "handle",
+                            "descriptionHtml",
+                            "bodyHtml",
+                            "tags",
+                            "vendor",
+                            "publishedAt",
+                            "variants",
+                            "images",
+                            "redirectNewHandle",
+                            "productType",
+                            "templateSuffix",
+                            "giftCard",
+                            "giftCardTemplateSuffix"
+                        ]
+                    },
+                    "gregsTakeshapeStoreId": {
+                        "instructions": "Format: gid://shopify/Product/1111111111111",
+                        "label": "product ID",
+                        "widget": "serviceObjectId",
+                        "provider": "shopify",
+                        "serviceObjectType": "product",
+                        "service": "gregs-takeshape-store"
+                    }
+                },
+                "order": [
+                    "extraDescription",
+                    "gregsTakeshapeStoreId",
+                    "gregsTakeshapeStore"
+                ]
+            }
+        }
+    },
+    "services": {
+        "shopify:gregs-takeshape-store": {
+            "params": {
+                "type": "graphql",
+                "namespace": "Shopify",
+                "shop": "gregs-takeshape-store",
+                "authHeader": "X-Shopify-Access-Token",
+                "endpoint": "https://gregs-takeshape-store.myshopify.com/admin/api/2020-07/graphql.json"
+            }
+        }
+    },
+    "dataKey": "AQIDAHhcZWXOdlBglkxBhI23ElO/clC/kuw5ynjXDSqJgfTz8gHagVRneBMQtZoVdy9Y3gouAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMzfDDooVfH6EXnLsgAgEQgDtIF/bIteZr1EkSXUlWIH1QC2/0WbGhvmnUakZyiGyCD7HPtawKAc4y1sCG3cC2wkSUsGsogsUU6YmknA=="
+}
