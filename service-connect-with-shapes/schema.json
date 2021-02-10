@@ -10,34 +10,34 @@
     ],
     "schemaVersion": "3",
     "queries": {
-        "getTShirt": {
-            "shape": "TShirt",
+        "getShirt": {
+            "shape": "Shirt",
             "resolver": {
                 "name": "takeshape:get",
                 "service": "takeshape:local",
                 "options": {
-                    "model": "TShirt"
+                    "model": "Shirt"
                 }
             },
-            "description": "Get a TShirt by ID",
-            "args": "TSGetArgs<TShirt>"
+            "description": "Get a Shirt by ID",
+            "args": "TSGetArgs<Shirt>"
         },
-        "getTShirtList": {
-            "shape": "PaginatedList<TShirt>",
+        "getShirtList": {
+            "shape": "PaginatedList<Shirt>",
             "resolver": {
                 "name": "takeshape:list",
                 "service": "takeshape:local",
                 "options": {
-                    "model": "TShirt"
+                    "model": "Shirt"
                 }
             },
-            "description": "Returns a list TShirt in natural order.",
-            "args": "TSListArgs<TShirt>"
+            "description": "Returns a list Shirt in natural order.",
+            "args": "TSListArgs<Shirt>"
         }
     },
     "mutations": {
-        "updateTShirt": {
-            "shape": "UpdateResult<TShirt>",
+        "updateShirt": {
+            "shape": "UpdateResult<Shirt>",
             "resolver": {
                 "resultsMapping": [
                     [
@@ -60,7 +60,7 @@
                         "name": "takeshape:update",
                         "service": "takeshape:local",
                         "options": {
-                            "model": "TShirt"
+                            "model": "Shirt"
                         }
                     },
                     {
@@ -171,47 +171,47 @@
                     }
                 ]
             },
-            "description": "Update TShirt",
-            "args": "UpdateArgs<TShirtInterface>"
+            "description": "Update Shirt",
+            "args": "UpdateArgs<ShirtInterface>"
         },
-        "createTShirt": {
-            "shape": "CreateResult<TShirt>",
+        "createShirt": {
+            "shape": "CreateResult<Shirt>",
             "resolver": {
                 "name": "takeshape:create",
                 "service": "takeshape:local",
                 "options": {
-                    "model": "TShirt"
+                    "model": "Shirt"
                 }
             },
-            "description": "Create TShirt",
-            "args": "CreateArgs<TShirt>"
+            "description": "Create Shirt",
+            "args": "CreateArgs<Shirt>"
         },
-        "duplicateTShirt": {
-            "shape": "DuplicateResult<TShirt>",
+        "duplicateShirt": {
+            "shape": "DuplicateResult<Shirt>",
             "resolver": {
                 "name": "takeshape:duplicate",
                 "service": "takeshape:local",
                 "options": {
-                    "model": "TShirt"
+                    "model": "Shirt"
                 }
             },
-            "description": "Duplicate TShirt",
-            "args": "DuplicateArgs<TShirt>"
+            "description": "Duplicate Shirt",
+            "args": "DuplicateArgs<Shirt>"
         },
-        "deleteTShirt": {
-            "shape": "DeleteResult<TShirt>",
+        "deleteShirt": {
+            "shape": "DeleteResult<Shirt>",
             "resolver": {
                 "name": "takeshape:delete",
                 "service": "takeshape:local",
                 "options": {
-                    "model": "TShirt"
+                    "model": "Shirt"
                 }
             },
-            "description": "Delete TShirt",
-            "args": "DeleteArgs<TShirt>"
+            "description": "Delete Shirt",
+            "args": "DeleteArgs<Shirt>"
         },
-        "createTShirtAndServiceObject": {
-            "shape": "CreateResult<TShirt>",
+        "createShirtAndServiceObject": {
+            "shape": "CreateResult<Shirt>",
             "resolver": {
                 "compose": [
                     {
@@ -334,7 +334,7 @@
                         "name": "takeshape:create",
                         "service": "takeshape:local",
                         "options": {
-                            "model": "TShirt"
+                            "model": "Shirt"
                         }
                     }
                 ],
@@ -347,11 +347,11 @@
                     ]
                 ]
             },
-            "description": "Create TShirt",
-            "args": "CreateArgs<TShirtInterface>"
+            "description": "Create Shirt",
+            "args": "CreateArgs<ShirtInterface>"
         },
-        "updateTShirtAndCreateServiceObject": {
-            "shape": "UpdateResult<TShirt>",
+        "updateShirtAndCreateServiceObject": {
+            "shape": "UpdateResult<Shirt>",
             "resolver": {
                 "compose": [
                     {
@@ -474,7 +474,7 @@
                         "name": "takeshape:update",
                         "service": "takeshape:local",
                         "options": {
-                            "model": "TShirt"
+                            "model": "Shirt"
                         }
                     }
                 ],
@@ -487,16 +487,16 @@
                     ]
                 ]
             },
-            "description": "Update TShirt",
-            "args": "UpdateArgs<TShirtInterface>"
+            "description": "Update Shirt",
+            "args": "UpdateArgs<ShirtInterface>"
         }
     },
     "shapes": {
-        "TShirtInterface": {
-            "id": "TShirtInterface",
-            "name": "TShirtInterface",
-            "title": "TShirtInterface",
-            "description": "TShirtInterface",
+        "ShirtInterface": {
+            "id": "ShirtInterface",
+            "name": "ShirtInterface",
+            "title": "ShirtInterface",
+            "description": "ShirtInterface",
             "schema": {
                 "type": "object",
                 "properties": {
@@ -524,9 +524,9 @@
                 "required": []
             }
         },
-        "TShirt": {
+        "Shirt": {
             "id": "FnKRDwyCk",
-            "name": "TShirt",
+            "name": "Shirt",
             "title": "T Shirt",
             "workflow": "default",
             "model": {
@@ -540,11 +540,11 @@
                         "minLength": 0,
                         "description": "",
                         "title": "Extra Description",
-                        "@mapping": "takeshape:local:TShirt.oJli0Toud"
+                        "@mapping": "takeshape:local:Shirt.oJli0Toud"
                     },
                     "gregsTakeshapeStoreId": {
                         "type": "string",
-                        "@mapping": "takeshape:local:TShirt.jzgwP1Wjp",
+                        "@mapping": "takeshape:local:Shirt.jzgwP1Wjp",
                         "title": "gregs-takeshape-store",
                         "minLength": 1,
                         "pattern": "(^gid://shopify/Product/\\d+$)|(^TS_CREATE$)"
@@ -575,7 +575,7 @@
     },
     "workflows": {},
     "forms": {
-        "TShirt": {
+        "Shirt": {
             "default": {
                 "properties": {
                     "extraDescription": {
